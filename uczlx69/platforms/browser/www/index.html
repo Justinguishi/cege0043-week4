@@ -8,17 +8,25 @@
 	   <script src='https://unpkg.com/leaflet@1.1.0/dist/leaflet.js'
 	   integrity='sha512-mNqn2Wg7tSToJhvHcqfzLMU6J4mkOImSPTxVZAdo+lcPlk+GhZmYgACEe0x35K7YzW1zJ7XyJV/TT1MrdXvMcA=='
        crossorigin=''></script>
+	    <script src='js/leafletFunctions.js'></script>
 	   
 	   <!--the following CSS is used to set the size of the Map-->
 	   <style type="text/css">
 	                      #mapid {height:180px;}
 	   </style>
+	   
+	   <!-- the following links incorporate the CSS required for the custom icon creation---->
+	   <link rel="stylesheet" href='./css/ionicons.min.css'>
+	   <link rel="stylesheet" href='./css/leaflet.awesome-markers.css'>
+	   <script src='./js/leaflet.awesome-markers.js'></script>   
 <head>
 
 #to write the body here 
 <body>
        <!--the mapid div will hold the map-->
+	   <main class='mdl-layout__content mdl-color--grey-100'>
 	   <div id='mapid'style='width:1000px; height:800px;'></div>
+	   </main>
 	   
 	   <!--the following script will load the map and set the default view and zoom, as well as loading the basemap tiles-->
 	   <script>
@@ -33,6 +41,8 @@
 	   id:'mapbox.streets'
 	   }).addTo(mymap);
 	   </script>
+	 
+	  
 </body>
 </html>	   
 	  
