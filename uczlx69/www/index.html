@@ -8,10 +8,11 @@
 	   <script src='https://unpkg.com/leaflet@1.1.0/dist/leaflet.js'
 	   integrity='sha512-mNqn2Wg7tSToJhvHcqfzLMU6J4mkOImSPTxVZAdo+lcPlk+GhZmYgACEe0x35K7YzW1zJ7XyJV/TT1MrdXvMcA=='
        crossorigin=''></script>
+	   <script src='js/leafletFunctions.js'></script>
 	   
 	   <!--the following CSS is used to set the size of the Map-->
 	   <style type="text/css">
-	                      #mapid {height:500px;}
+	                      #mapid {height:180px;}
 	   </style>
 	   
 	   <!-- the following links incorporate the CSS required for the custom icon creation---->
@@ -27,6 +28,14 @@
 	   <div id='mapid'style='width:1000px; height:800px;'></div>
 	   </main>
 	   
+	   
+	   <button id='loadBusstopsData' name='loadBusstopsData' onclick='loadBusstopData()'>Click here to load Bus Stops data</button>
+	   <button id='loadData' name='loadData' onclick='loadEarthquakeData()'>Click here to load the Earthquake data</button>
+	   <button id='removebusstops' name='removebusstops' onclick='removebusstopsData()'>Click to remove Bus Stops</button>
+	   <button id='removeearthquakes' name='removeearthquakes' onclick='removeearthquakesData()'>Click to remove Earthquakes Data</button>
+	   <button id='removedata' name='removedata' onclick='removealldata()'>Click here to remove all the data</button>	
+	   
+
 	   <!--the following script will load the map and set the default view and zoom, as well as loading the basemap tiles-->
 	   <script>
 	             //load the map
@@ -40,8 +49,8 @@
 	   id:'mapbox.streets'
 	   }).addTo(mymap);
 	   </script>
-	   <script src='js/leaflet.js'></script>
-	   <script src='js/leafletFunction.js'></script>
+	 
+	  
 </body>
 </html>	   
 	  
