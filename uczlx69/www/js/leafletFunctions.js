@@ -51,4 +51,20 @@ function getEarthquakes(){
 		 return L.marker(latlng,{icon:testMarkerPink}).bindPopup("<b>"+feature.properties.place+"</b>");;}},}).addTo(mymap)
 	   // change the map zoom so that all the data is shown
 	   mymap.fitBounds(earthquakelayer.getBounds());}	 
+	   
+	   
+	   
+	   	   // add the custom icons
+	   var testMarkerRed=L.AwesomeMarkers.icon({
+	   icon:'play',
+	   markerColor:'red'});
+	   var testMarkerPink=L.AwesomeMarkers.icon({
+	   icon:'play',
+	   markerColor:'pink'});
+	   
+	   document.addEventListener('DOMContentLoaded',function(){getEarthquakes();},false);
+	   
+	   
+	   
+	   
 
