@@ -4,18 +4,18 @@ var userPolygon;
 
 function trackAndCircle(){
 	if (navigator.geolocation){
-		navigator.geolocation.watchPosition(showPosition, addPointLinePoly);
+		navigator.geolocation.watchPosition(showposition);
 		} else{
 			document.getElementById('showLocation').innerHTML='Geolocation is not supported by this browser';}}
 
-function showPosition(position){
+function showposition(position){
 	if (userMarker){mymap.removeLayer(userMarker);}
 	userMarker=L.marker([position.coords.latitude,position.coords.longitude],{icon:testMarkerRed}).addTo(mymap).bindPopup('<b>I am here!</b>'+
 	[position.coords.latitude,position.coords.longitude]);
 	userCircle=L.circle([position.coords.latitude,position.coords.longitude],500,{
 	   color:'red',
 	   fillColor:'#f03',
-	   fillOpacity:0.5
+	   fillOpacity:0.3
 	   }).addTo(mymap).bindPopup('I am a circle.');
   }
 	
