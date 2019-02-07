@@ -17,6 +17,8 @@ function showposition(position){
 	   fillColor:'#f03',
 	   fillOpacity:0.3
 	   }).addTo(mymap).bindPopup('I am a circle.');
+	userPolygon=L.polygon([[position.coords.latitude,position.coords.longitude],[position.coords.latitude+1.0,position.coords.longitude+1.0],[position.coords.latitude-1.0,position.coords.longitude-1.0]],
+	{color:'red',fillColor:"#f03",fillOpacity:0.1}).addTo(mymap).bindPopup('I am a polygon');
   }
 	
 	   var testMarkerRed=L.AwesomeMarkers.icon({
