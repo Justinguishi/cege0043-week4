@@ -6,7 +6,7 @@ function trackLocation(){
 		} else{
 			document.getElementById('showLocation').innerHTML='Geolocation is not supported by this browser';}}
 
-function showPosition(position){alert('You are tracking your location');
+function showPosition(position){
 	if (userMarker){mymap.removeLayer(userMarker);}
 	userMarker=L.marker([position.coords.latitude,position.coords.longitude],{icon:testMarkerPink}).addTo(mymap).bindPopup('<b>I am here!</b>'+
 	[position.coords.latitude,position.coords.longitude]);}
