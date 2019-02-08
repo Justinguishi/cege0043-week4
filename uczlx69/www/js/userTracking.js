@@ -22,10 +22,26 @@ function showPosition(position){
 
 function getDistance(){
 	//alert('getting distance');
-	navigator.geolocation.getCurrentPosition(getDistanceFromPoint);
+	navigator.geolocation.getCurrentPosition(getDistanceFromMultiplePoints);
 	
 }
 //
+
+//to get the distance from earthquake to the current position
+function getDistanceFromMultiplePoints(position){
+	var minDistance=100000000000;
+	var closestQuake='';
+	for(var i=0;i<earthquakes.features.length;i++){
+		var obj=earthquakes.feature[i];
+		var distance=calculateDistance(position.coords.latitude,position.coords.longitude,obj.geometry.coordinates[0],obj.geometry.coordinates[1],'k');
+		if (distance<minDistance){
+			minDistance=distance;
+			closestQuake=obj.properties.place;
+		}
+	}
+	alert('Earthquake:'+closestQuake+'is distance'+minDistance+'away');
+}
+
 
 function getDistanceFromPoint(position){
 	var lat = 51.524616;
@@ -48,4 +64,38 @@ dist=(subAngle/360)*2*Math.PI*3956   //((subtended angle in degrees/360)*2*PI*ra
 if (unit=='K'){dist=dist* 1.609344;} //convert miles to km
 if (unit=='N'){dist=dist* 0.8684;}   //convert miles to nautical miles 
 return dist;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
