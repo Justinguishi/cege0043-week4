@@ -20,18 +20,20 @@ function showPosition(position){
 
 
 
-function getDistance(){//alert('getting distance');
-navigator.geolocation.getCurrentPosition(getDistanceFromPoint);
-if (distance<0.1) {alert('You are closing to the UCL!');
-}}
+function getDistance(){
+	//alert('getting distance');
+	navigator.geolocation.getCurrentPosition(getDistanceFromPoint);
+	
+}
+//
 
 function getDistanceFromPoint(position){
 	var lat = 51.524616;
 	var lng = -0.13818;
-	var distance = calculateDistance(position.coords.latitude, position.coords.longitude, lat,lng, 'K');document.getElementById('showDistance').innerHTML = "Distance: " + distance;
+	var distance = calculateDistance(position.coords.latitude, position.coords.longitude, lat,lng, 'K');
 	if (distance<0.1) {alert('You are closing to the UCL!');}
 }
-
+//document.getElementById('showDistance').innerHTML = "Distance: " + distance;
 function calculateDistance(lat1,lon1,lat2,lon2,unit){
 var radlat1=Math.PI*lat1/180;
 var radlat2=Math.PI*lat2/180;

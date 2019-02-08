@@ -1,4 +1,5 @@
 var client;
+var earthquakes;
 var earthquakelayer;
 var getEarthquakes;
 
@@ -36,6 +37,7 @@ function getEarthquakes(){
 	   function loadEarthquakelayer(earthquakedata){
 	   // convert the text received from the server to JSON
 	   var earthquakejson=JSON.parse(earthquakedata);
+	   earthquakes=earthquakejson;
 	   //load the geoJson layer
 	   earthquakelayer=L.geoJson(earthquakejson,
 	   {
