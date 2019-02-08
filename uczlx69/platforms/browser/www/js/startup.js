@@ -1,6 +1,7 @@
 var userMarker;
 var userCircle;
 var userPolygon;
+var earthquakes;
 
 function trackAndCircle(){
 	if (navigator.geolocation){
@@ -15,10 +16,11 @@ function showposition(position){
 	userCircle=L.circle([position.coords.latitude,position.coords.longitude],500,{
 	   color:'red',
 	   fillColor:'#f03',
-	   fillOpacity:0.3
+	   fillOpacity:0.05
 	   }).addTo(mymap).bindPopup('I am a circle.');
-	userPolygon=L.polygon([[position.coords.latitude,position.coords.longitude],[position.coords.latitude+1.0,position.coords.longitude+1.0],[position.coords.latitude-1.0,position.coords.longitude-1.0]],
-	{color:'red',fillColor:"#f03",fillOpacity:0.1}).addTo(mymap).bindPopup('I am a polygon');
+	userPolygon=L.polygon([[position.coords.latitude,position.coords.longitude],[position.coords.latitude+0.0005,position.coords.longitude+0.0005],[position.coords.latitude-0.0005,position.coords.longitude-0.0005]],
+	{color:'red',fillColor:"#f03",fillOpacity:0.05}).addTo(mymap).bindPopup('I am a polygon');
+	getEarthquakes();
   }
 	
 	   var testMarkerRed=L.AwesomeMarkers.icon({
