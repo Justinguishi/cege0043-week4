@@ -24,5 +24,13 @@ function showposition(position){
 	   var testMarkerRed=L.AwesomeMarkers.icon({
 	   icon:'play',
 	   markerColor:'red'});
-
-//userPolygon=L.polygon([[position.coords.latitude,position.coords.longitude],[51.503,-0.06],[51.51,-0.047]],{color:'red',fillColor:"#f03",fillOpacity:0.5}).addTo(mymap).bindPopup('I am a polygon');
+	   
+	   
+	   
+	   
+	   
+function startup(){
+	document.addEventListener('DOMContentLoaded',function(){
+		trackAndCircle();
+	},false);
+}	   
