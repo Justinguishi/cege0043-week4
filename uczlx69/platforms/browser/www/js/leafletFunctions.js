@@ -16,7 +16,7 @@ function  addPointLinePoly(){
 }
 
 function getEarthquakes(){
-	alert("You're clicking to add the earthquakes data");
+	//alert("You're clicking to add the earthquakes data");
 	client=new XMLHttpRequest();
 	   client.open('GET','https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson');
 	     client.onreadystatechange=earthquakeResponse;    

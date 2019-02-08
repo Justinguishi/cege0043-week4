@@ -11,7 +11,7 @@ function showPosition(position){
 	userMarker=L.marker([position.coords.latitude,position.coords.longitude],{icon:testMarkerPink}).addTo(mymap).bindPopup('<b>I am here!</b>'+
 	[position.coords.latitude,position.coords.longitude]);
 	getDistance();
-	mymap.setView([position.coords.latitude,position.coords.longitude],13)
+	mymap.setView([position.coords.latitude,position.coords.longitude],13);
 	}
 	
 	   var testMarkerPink=L.AwesomeMarkers.icon({
