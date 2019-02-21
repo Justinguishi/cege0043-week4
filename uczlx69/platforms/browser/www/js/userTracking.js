@@ -11,7 +11,7 @@ function showPosition(position){
 	userMarker=L.marker([position.coords.latitude,position.coords.longitude],{icon:testMarkerPink}).addTo(mymap).bindPopup('<b>I am here!</b>'+
 	[position.coords.latitude,position.coords.longitude]);
 	getDistance();
-	mymap.setView([position.coords.latitude,position.coords.longitude],13);
+	mymap.setView([position.coords.latitude,position.coords.longitude],13)
 	}
 	
 	   var testMarkerPink=L.AwesomeMarkers.icon({
@@ -31,9 +31,9 @@ function getDistance(){
 function getDistanceFromMultiplePoints(position){
 	var minDistance=100000000000;
 	var closestQuake='';
-	for(var i=0;i<earthquakes.features.length;i++){
-		var obj=earthquakes.feature[i];
-		var distance=calculateDistance(position.coords.latitude,position.coords.longitude,obj.geometry.coordinates[0],obj.geometry.coordinates[1],'k');
+	for(var i=0;i < earthquakes.features.length;i++){
+		var obj=earthquakes.features[i];
+		var distance=calculateDistance(position.coords.latitude,position.coords.longitude,obj.geometry.coordinates[0],obj.geometry.coordinates[1],'K');
 		if (distance<minDistance){
 			minDistance=distance;
 			closestQuake=obj.properties.place;
@@ -42,12 +42,11 @@ function getDistanceFromMultiplePoints(position){
 	alert('Earthquake:'+closestQuake+'is distance'+minDistance+'away');
 }
 
-
 function getDistanceFromPoint(position){
 	var lat = 51.524616;
 	var lng = -0.13818;
 	var distance = calculateDistance(position.coords.latitude, position.coords.longitude, lat,lng, 'K');
-	if (distance<0.1) {alert('You are closing to the UCL!');}
+	if (distance<1) {alert('You are closing to the UCL!');}
 }
 //document.getElementById('showDistance').innerHTML = "Distance: " + distance;
 function calculateDistance(lat1,lon1,lat2,lon2,unit){
@@ -64,8 +63,6 @@ dist=(subAngle/360)*2*Math.PI*3956   //((subtended angle in degrees/360)*2*PI*ra
 if (unit=='K'){dist=dist* 1.609344;} //convert miles to km
 if (unit=='N'){dist=dist* 0.8684;}   //convert miles to nautical miles 
 return dist;}
-
-
 
 
 
